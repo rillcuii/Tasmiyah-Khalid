@@ -1,406 +1,276 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undangan Aqiqah & Tasmiyah</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Fredoka", sans-serif;
-      }
 
-      html {
-        scroll-behavior: smooth;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Aqiqah & Tasmiyah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Fredoka", sans-serif;
+    }
 
-      .section {
-        display: none;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.lock-scroll {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    nav.hidden-nav {
+      display: none;
+    }
+
+    html.scroll-locked {
+      scroll-behavior: auto !important;
+    }
+
+    .judul-opening {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .konten-opening {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background-color: #0ea5e9;
+      margin: 0.5rem auto;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 bg-[#d9eef6] lock-scroll scroll-locked">
+  <!-- Section Opening -->
+  <section id="opening"
+    class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-20 overflow-hidden">
+    <img src="bg2.png" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10" />
+
+    <img src="bayi5.png" alt="Foto Anak"
+      class="w-48 h-48 rounded-full border-8 border-white shadow-xl object-cover z-10 mb-6 animate-fade-in" />
+
+    <div
+      class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-md w-full konten-opening animate-fade-in-up z-10">
+      <p class="text-xs text-gray-700 italic mb-2">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <h1 class="text-3xl text-sky-700 font-bold judul-opening">Undangan</h1>
+      <h2 class="text-xl text-sky-700 font-semibold judul-opening mb-1">Aqiqah & Tasmiyah</h2>
+      <div class="divider"></div>
+      <p class="text-sm text-gray-800 mt-3">Dengan penuh rasa syukur, kami mengundang</p>
+      <p class="text-base text-gray-900 font-semibold mb-4">Bapak/Ibu/Saudara/i</p>
+
+      <a href="#profil"
+        class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-semibold tracking-wide px-8 py-2 mt-4 rounded-full transition-all shadow-md">
+        Buka Undangan
+      </a>
+    </div>
+  </section>
+
+  <style>
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
-        transition: opacity 0.5s ease;
+        transform: translateY(20px);
       }
-      .section.active {
-        display: block;
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
         opacity: 1;
       }
-    </style>
-  </head>
+    }
+  </style>
 
-  <body class="text-gray-800 bg-[#d9eef6]">
-    <!-- Section Opening -->
-    <section
-      id="opening"
-      class="relative py-16 min-h-screen flex justify-center items-center text-center px-4 overflow-hidden"
-    >
-      <img
-        src="bg2.png"
-        alt="Background"
-        class="absolute inset-0 w-full h-full object-cover -z-10"
-      />
-      <div
-        class="bg-white/50 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-sm w-full text-center"
-      >
-        <img
-          src="bayi5.png"
-          alt="Foto Anak"
-          class="w-40 h-40 mx-auto rounded-full shadow-md mb-4 object-cover border-4 border-white"
-        />
-        <p class="text-sm text-gray-600 italic mb-2">
-          بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
-        </p>
-        <h1 class="text-2xl font-bold text-sky-700 mb-2">Tasyakuran Aqiqah</h1>
-        <p class="text-base text-gray-700 mb-1">
-          Kelahiran <span class="font-semibold">putra pertama</span>
-        </p>
-        <p class="text-base text-gray-700">kami yang bernama</p>
-        <div class="relative inline-block my-6">
-          <div class="inline-block my-2">
-            <div
-              class="bg-sky-500 text-white font-bold text-lg text-center px-10 py-2"
-              style="
-                clip-path: polygon(
-                  20px 0%,
-                  calc(100% - 20px) 0%,
-                  100% 50%,
-                  calc(100% - 20px) 100%,
-                  20px 100%,
-                  0% 50%
-                );
-              "
-            >
-              Muhammad Khalid Rianto
-            </div>
-          </div>
-        </div>
-        <p class="text-base text-gray-700">
-          Kami turut mengundang Bapak/Ibu, Saudara/i untuk hadir dalam acara
-          Aqiqah anak kami.
-        </p>
+  <!-- Section Profil -->
+  <section id="profil" class="relative py-16 flex flex-col justify-center items-center text-center">
+    <img src="bg5.png" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10" />
+    <div class="bg-white/50 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-sm w-full text-black">
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <img src="bayi1.png" alt="Foto 1" data-aos="zoom-in" class="rounded-lg w-full h-28 object-cover shadow-md" />
+        <img src="bayi2.png" alt="Foto 2" data-aos="zoom-in" data-aos-delay="200"
+          class="rounded-lg w-full h-28 object-cover shadow-md" />
+        <img src="bayi3.png" alt="Foto 3" data-aos="zoom-in" data-aos-delay="400"
+          class="rounded-lg w-full h-28 object-cover shadow-md" />
+        <img src="bayi5.png" alt="Foto 4" data-aos="zoom-in" data-aos-delay="600"
+          class="rounded-lg w-full h-28 object-cover shadow-md" />
       </div>
-    </section>
-
-    <!-- Section Profil Anak -->
-    <section
-      id="profil"
-      class="relative py-16 flex flex-col justify-center items-center text-center"
-    >
-      <img
-        src="bg5.png"
-        alt="Background"
-        class="absolute inset-0 w-full h-full object-cover -z-10"
-      />
-      <div
-        class="bg-white/50 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-sm w-full text-center text-black"
-      >
-        <div class="grid grid-cols-2 gap-4 mb-4 relative overflow-visible">
-          <img
-            src="bayi1.png"
-            alt="Foto 1"
-            data-aos="zoom-in"
-            data-aos-delay="0"
-            data-aos-duration="1000"
-            class="rounded-lg object-cover w-full h-28 shadow-md transition duration-500 ease-in-out transform hover:scale-125 active:scale-125 z-10 hover:z-50"
-          />
-          <img
-            src="bayi2.png"
-            alt="Foto 2"
-            data-aos="zoom-in"
-            data-aos-delay="600"
-            data-aos-duration="1400"
-            class="rounded-lg object-cover w-full h-28 shadow-md transition duration-500 ease-in-out transform hover:scale-125 active:scale-125 z-10 hover:z-50"
-          />
-          <img
-            src="bayi3.png"
-            alt="Foto 3"
-            data-aos="zoom-in"
-            data-aos-delay="800"
-            data-aos-duration="1800"
-            class="rounded-lg object-cover w-full h-28 shadow-md transition duration-500 ease-in-out transform hover:scale-125 active:scale-125 z-10 hover:z-50"
-          />
-          <img
-            src="bayi5.png"
-            alt="Foto 4"
-            data-aos="zoom-in"
-            data-aos-delay="1000"
-            data-aos-duration="2200"
-            class="rounded-lg object-cover w-full h-28 shadow-md transition duration-500 ease-in-out transform hover:scale-125 active:scale-125 z-10 hover:z-50"
-          />
-        </div>
-
-        <div class="inline-block my-6">
-          <div
-            class="bg-sky-500 text-white font-bold text-lg text-center px-10 py-2"
-            style="
-              clip-path: polygon(
-                20px 0%,
-                calc(100% - 20px) 0%,
-                100% 50%,
-                calc(100% - 20px) 100%,
-                20px 100%,
-                0% 50%
-              );
-            "
-          >
-            Muhammad Khalid Rianto
-          </div>
-        </div>
-
-        <div class="text-md text-gray-800 space-y-1 mb-5 font-medium">
-          <p class="flex items-center justify-center gap-2">
-            <img src="gender.png" alt="Ikon gender laki-laki" class="w-5 h-5" />
-            <span class="text-sky-400">Laki-laki</span>
-          </p>
-          <p>📅 Lahir: 23 Juni 2025</p>
-          <p>⚖️ Berat: 2.995 kg</p>
-        </div>
-
-        <p class="text-base text-gray-700 leading-relaxed">
-          Kami turut mengundang Bapak/Ibu, Saudara/i untuk hadir dalam acara
-          Aqiqah anak kami.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section Acara -->
-    <section
-      id="acara"
-      class="relative py-16 flex flex-col justify-center items-center text-center px-6"
-    >
-      <img
-        src="bg5.png"
-        alt="Background"
-        class="absolute inset-0 w-full h-full object-cover -z-10"
-      />
-      <div
-        class="bg-white/80 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-md w-full text-black space-y-6 text-center"
-      >
-        <h2 class="text-2xl sm:text-3xl font-bold text-sky-600">
-          Tanggal, Waktu & Tempat
-        </h2>
-        <div
-          class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-base sm:text-lg text-gray-800 text-left"
-        >
-          <span class="font-medium text-gray-600">Tanggal</span>
-          <span>: Minggu, 27 Juli 2025</span>
-
-          <span class="font-medium text-gray-600">Waktu</span>
-          <span>: 11.00 WITA – Selesai</span>
-
-          <span class="font-medium text-gray-600">Tempat</span>
-          <span>: Jl. Sutoyo S, Komplek ES Terang No. 75 RT 20</span>
-        </div>
-
-        <div class="flex justify-center">
-          <img
-            src="qrcode-benar.png"
-            alt="QR Code Lokasi"
-            class="w-40 h-40 object-contain"
-          />
-        </div>
-
-        <div class="rounded-lg overflow-hidden shadow-md">
-          <iframe
-            class="w-full h-64 border-0"
-            frameborder="0"
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3983.1275975551794!2d114.57155987497194!3d-3.3186258966561937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMTknMDcuMSJTIDExNMKwMzQnMjYuOSJF!5e0!3m2!1sid!2sid!4v1752734508284!5m2!1sid!2sid"
-            allowfullscreen
-          ></iframe>
+      <div class="inline-block my-6">
+        <div class="bg-sky-500 text-white font-bold text-lg px-10 py-2"
+          style="clip-path: polygon(20px 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 20px 100%, 0% 50%);">
+          Muhammad Khalid Rianto
         </div>
       </div>
-    </section>
-
-    <!-- Section Ucapan -->
-    <section
-      id="ucapan"
-      class="relative py-16 flex flex-col justify-center items-center text-center px-4"
-    >
-      <img
-        src="bg6.png"
-        alt="Background"
-        class="absolute inset-0 w-full h-full object-cover -z-10"
-      />
-      <div
-        class="bg-white/70 backdrop-blur-lg p-6 mb-40 rounded-xl shadow-lg max-w-sm w-full text-center text-black"
-      >
-        <div class="inline-block my-6">
-          <div
-            class="relative bg-sky-500 text-white font-bold text-xl text-center px-12 py-3"
-            style="
-              clip-path: polygon(
-                20px 0%,
-                calc(100% - 20px) 0%,
-                100% 50%,
-                calc(100% - 20px) 100%,
-                20px 100%,
-                0% 50%
-              );
-            "
-          >
-            Terima Kasih
-          </div>
-        </div>
-        <p class="text-base sm:text-lg text-gray-800 mb-4 leading-relaxed">
-          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu
-          berkenan hadir dan memberikan doa terbaik.
+      <div class="text-md text-gray-800 space-y-1 mb-5 font-medium">
+        <p class="flex items-center justify-center gap-2">
+          <img src="gender.png" alt="Ikon" class="w-5 h-5" />
+          <span class="text-sky-400">Laki-laki</span>
         </p>
-        <p class="text-base sm:text-lg text-gray-800 font-semibold italic">
-          Wassalamu'alaikum Warahmatullahi Wabarakatuh
-        </p>
+        <p>📅 Lahir: 23 Juni 2025</p>
+        <p>⚖️ Berat: 2.995 kg</p>
       </div>
-    </section>
+      <p class="text-base text-gray-700 leading-relaxed">
+        Kami turut mengundang Bapak/Ibu, Saudara/i untuk hadir dalam acara Aqiqah anak kami.
+      </p>
+    </div>
+  </section>
 
-    <!-- Navigasi -->
-    <nav
-      class="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-md shadow-md rounded-3xl px-4 py-2 flex justify-between items-center z-50"
-    >
-      <a
-        href="#opening"
-        class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 transition duration-200 w-1/4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 mb-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 20l9 2V6l-9-2-9 2v16l9-2z"
-          />
-        </svg>
-        <span>Opening</span>
-      </a>
-      <a
-        href="#profil"
-        class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 transition duration-200 w-1/4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 mb-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5.121 17.804A4 4 0 018 17h8a4 4 0 012.879 1.804M12 11a4 4 0 100-8 4 4 0 000 8z"
-          />
-        </svg>
-        <span>Profil</span>
-      </a>
-      <a
-        href="#acara"
-        class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 transition duration-200 w-1/4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 mb-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M8 7V3m8 4V3m-9 8h10m-5 4h5m-5 4h5M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"
-          />
-        </svg>
-        <span>Acara</span>
-      </a>
-      <a
-        href="#ucapan"
-        class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 transition duration-200 w-1/4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 mb-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M7 8h10M7 12h6m5 4v3a1 1 0 01-1.447.894L12 18H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-1z"
-          />
-        </svg>
-        <span>Ucapan</span>
-      </a>
-    </nav>
+  <!-- Section Acara -->
+  <section id="acara" class="relative py-16 flex flex-col justify-center items-center text-center px-6">
+    <img src="bg5.png" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10" />
+    <div class="bg-white/80 backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-md w-full text-black space-y-6">
+      <h2 class="text-2xl font-bold text-sky-600">Tanggal, Waktu & Tempat</h2>
+      <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-gray-800 text-left">
+        <span class="font-medium text-gray-600">Tanggal</span>
+        <span>: Minggu, 27 Juli 2025</span>
+        <span class="font-medium text-gray-600">Waktu</span>
+        <span>: 11.00 WITA – Selesai</span>
+        <span class="font-medium text-gray-600">Tempat</span>
+        <span>: Jl. Sutoyo S, Komplek ES Terang No. 75 RT 20</span>
+      </div>
+      <img src="qrcode-benar.png" alt="QR Code Lokasi" class="w-40 h-40 mx-auto" />
+      <iframe class="w-full h-64 rounded-lg border-0" allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3983.1275975551794!2d114.57155987497194!3d-3.3186258966561937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMTknMDcuMSJTIDExNMKwMzQnMjYuOSJF!5e0!3m2!1sid!2sid!4v1752808594634!5m2!1sid!2sid">
+      </iframe>
+    </div>
+  </section>
 
-    <!-- Musik Latar Belakang -->
-    <audio id="bg-music" src="lagu.mp3" autoplay loop></audio>
+  <!-- Section Ucapan -->
+  <section id="ucapan" class="relative py-16 flex flex-col justify-center items-center text-center px-4">
+    <img src="bg6.png" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10" />
+    <div class="bg-white/70 backdrop-blur-lg p-6 mb-40 rounded-xl shadow-lg max-w-sm w-full text-black">
+      <div class="inline-block my-6">
+        <div class="bg-sky-500 text-white font-bold text-xl px-12 py-3"
+          style="clip-path: polygon(20px 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 20px 100%, 0% 50%);">
+          Terima Kasih
+        </div>
+      </div>
+      <p class="text-base text-gray-800 mb-4">
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu berkenan hadir dan memberikan doa
+        terbaik.
+      </p>
+      <p class="text-base text-gray-800 font-semibold italic">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    </div>
+  </section>
 
-    <script>
-      window.addEventListener("load", () => {
-        const audio = document.getElementById("bg-music");
-        const playPromise = audio.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            document.addEventListener("click", () => audio.play(), {
-              once: true,
+  <!-- Navigasi -->
+  <nav id="navbar"
+    class="hidden-nav fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-sm bg-white/90 backdrop-blur-md shadow-md rounded-3xl px-4 py-2 flex justify-between items-center z-50">
+    <a href="#opening" class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 w-1/4">
+      <svg class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l9 2V6l-9-2-9 2v16l9-2z" />
+      </svg>
+      <span>Opening</span>
+    </a>
+    <a href="#profil" class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 w-1/4">
+      <svg class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5.121 17.804A4 4 0 018 17h8a4 4 0 012.879 1.804M12 11a4 4 0 100-8 4 4 0 000 8z" />
+      </svg>
+      <span>Profil</span>
+    </a>
+    <a href="#acara" class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 w-1/4">
+      <svg class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M8 7V3m8 4V3m-9 8h10m-5 4h5m-5 4h5M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
+      </svg>
+      <span>Acara</span>
+    </a>
+    <a href="#ucapan" class="flex flex-col items-center text-sm text-sky-700 hover:text-sky-900 w-1/4">
+      <svg class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M7 8h10M7 12h6m5 4v3a1 1 0 01-1.447.894L12 18H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-1z" />
+      </svg>
+      <span>Ucapan</span>
+    </a>
+  </nav>
+
+  <!-- Musik -->
+  <audio id="bg-music" src="lagu.mp3" autoplay loop></audio>
+
+  <!-- Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function bukaUndangan() {
+      document.body.classList.remove('lock-scroll');
+      document.body.classList.remove('scroll-locked');
+      document.getElementById('navbar').classList.remove('hidden-nav');
+      localStorage.setItem("undangan_dibuka", "true");
+    }
+
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-music");
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          document.addEventListener("click", () => audio.play(), { once: true });
+        });
+      }
+
+      const sudahBuka = localStorage.getItem("undangan_dibuka") === "true";
+      const hash = window.location.hash;
+
+      if (sudahBuka) {
+        document.body.classList.remove("lock-scroll");
+        document.body.classList.remove("scroll-locked");
+        document.getElementById("navbar").classList.remove("hidden-nav");
+
+        const target = document.querySelector(hash);
+        if (target && hash !== "#opening") {
+          setTimeout(() => {
+            window.scrollTo({
+              top: target.offsetTop,
+              behavior: "smooth"
             });
+          }, 100);
+        }
+      } else {
+        if (hash !== "#opening") {
+          window.location.hash = "#opening";
+        }
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const section = document.getElementById(targetId);
+        if (section) {
+          bukaUndangan();
+          window.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
           });
         }
       });
-    </script>
+    });
+  </script>
+</body>
 
-    <!-- Script AOS + Navigasi -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init();
-
-      const sections = ["opening", "profil", "acara", "ucapan"];
-
-      function showSection(index) {
-        sections.forEach((id, i) => {
-          const sec = document.getElementById(id);
-          sec.classList.toggle("active", i === index);
-        });
-
-        setTimeout(() => {
-          const aosElements = document.querySelectorAll(".active [data-aos]");
-          aosElements.forEach((el) => {
-            el.removeAttribute("data-aos");
-            void el.offsetWidth;
-            el.setAttribute("data-aos", "zoom-in");
-          });
-
-          AOS.refresh();
-        }, 10);
-      }
-    </script>
-
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute('href').substring(1);
-          const section = document.getElementById(targetId);
-
-          if (section) {
-            const offset = section.getBoundingClientRect().top + window.scrollY;
-
-            window.scrollTo({
-              top: offset,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-    </script>
-  </body>
 </html>
